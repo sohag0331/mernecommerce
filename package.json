@@ -1,0 +1,38 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "This is backend part of my ecommerce project",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "nodemon ./src/index.server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'index.server,client' -c 'red,green'  \"nodemon index.server.js\" \"npm run client\""
+  },
+  "keywords": [
+    "ecommerce",
+    "mern",
+    "web-project",
+    "api"
+  ],
+  "author": "Md Sohag Babu",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9",
+    "multer": "^1.4.2",
+    "shortid": "^2.2.15",
+    "slugify": "^1.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  }
+}
